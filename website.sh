@@ -48,7 +48,7 @@ sudo chmod -R 755 /var/www/zeedun
 sudo tee /etc/nginx/sites-available/zeedun << EOF
 server {
     listen 80;
-    server_name your-domain.com www.your-domain.com;
+    server_name website.zeedun.cloud www.website.zeedun.cloud;
     root /var/www/zeedun/public;
     index index.php index.html index.htm;
 
@@ -114,7 +114,8 @@ echo "🔒 Setting up SSL with Let's Encrypt..."
 sudo apt install -y certbot python3-certbot-nginx
 
 # Note: Replace 'your-domain.com' with your actual domain
-# sudo certbot --nginx -d your-domain.com -d www.your-domain.com
+sudo certbot --nginx -d website.zeedun.cloud -d www.website.zeedun.cloud
+
 
 echo "🗄️ Setting up database..."
 # Import database schema
